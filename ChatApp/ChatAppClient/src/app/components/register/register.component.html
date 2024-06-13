@@ -1,0 +1,24 @@
+<div class="grid grid-nogutter mt-8">
+    <div class="col"></div>
+    <div class="col-5 bg-primary-reverse shadow-4 border-round-lg border-red-600">
+        <div class="mb-5">
+            <h1 class="flex justify-content-center ">Giriş Yap</h1>
+            <small class="flex justify-content-center text-white">Lütfen bilgilerinizi doğru giriniz</small>
+        </div>
+        <div class="flex justify-content-center align-items-center">
+            <label for="nameSurname" class="mr-2 text-white">Ad Soyad</label>
+            <input type="text" id="nameSurname" pInputText [(ngModel)]="register.name" class="w-15rem border-round-sm shadow-1 h-2rem "/>
+        </div>
+        <div class="flex justify-content-center align-items-center mt-2 ml-4">
+            <label for="avatar" class="mr-2 text-white">Avatar</label>
+            <input type="file" id="avatar" (change)="setImage($event)" class="w-15rem border-round-sm shadow-1 h-2rem "/>
+        </div>
+        <div class="flex justify-content-center mt-3">
+            <p-button label="Register" severity="success" (onClick)="registerButton()" />
+        </div>
+        <div class="flex justify-content-center mt-3 mb-4">
+            <a href="/login" class="no-underline text-gray-500">Giriş yap</a>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>

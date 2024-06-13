@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\3fc7c43a-559e-4a0a-a3b3-719dce23e809.jpg",
+      "PackagePath": "staticwebassets\\avatar\\3fc7c43a-559e-4a0a-a3b3-719dce23e809.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\43d35084-2452-417a-a826-f296d46b36e2.png",
+      "PackagePath": "staticwebassets\\avatar\\43d35084-2452-417a-a826-f296d46b36e2.png"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\5b2c97b6-dbf7-4959-a4ec-990197b96f48.png",
+      "PackagePath": "staticwebassets\\avatar\\5b2c97b6-dbf7-4959-a4ec-990197b96f48.png"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\5c45e92b-6da9-47ce-8ea8-b068cb1af6f5.jpg",
+      "PackagePath": "staticwebassets\\avatar\\5c45e92b-6da9-47ce-8ea8-b068cb1af6f5.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\5e3cdc5b-1f01-46ee-a61d-1aac0fba5eca.jpg",
+      "PackagePath": "staticwebassets\\avatar\\5e3cdc5b-1f01-46ee-a61d-1aac0fba5eca.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\61ae1ea4-1fad-4c48-893c-975b3c1278b9.jpg",
+      "PackagePath": "staticwebassets\\avatar\\61ae1ea4-1fad-4c48-893c-975b3c1278b9.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\68198f4c-e0e5-4210-bce4-dc4b0332cdde.jpg",
+      "PackagePath": "staticwebassets\\avatar\\68198f4c-e0e5-4210-bce4-dc4b0332cdde.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\866a5b00-5040-40b3-b645-2734eb785a19.png",
+      "PackagePath": "staticwebassets\\avatar\\866a5b00-5040-40b3-b645-2734eb785a19.png"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\d7ef641e-0999-4c50-af15-afeb843e68fe.png",
+      "PackagePath": "staticwebassets\\avatar\\d7ef641e-0999-4c50-af15-afeb843e68fe.png"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\e90541c6-0ba4-427f-a774-2c95e79cbdb0.jpg",
+      "PackagePath": "staticwebassets\\avatar\\e90541c6-0ba4-427f-a774-2c95e79cbdb0.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\f74b6420-c6fc-4aeb-a847-187ea0117332.jpg",
+      "PackagePath": "staticwebassets\\avatar\\f74b6420-c6fc-4aeb-a847-187ea0117332.jpg"
+    },
+    {
+      "Id": "E:\\Yazılım\\ChatApp\\ChatAppServer\\ChatAppServer.WebAPI\\wwwroot\\avatar\\f8b09561-4d67-4089-ba52-04320d0b6642.png",
+      "PackagePath": "staticwebassets\\avatar\\f8b09561-4d67-4089-ba52-04320d0b6642.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ChatAppServer.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ChatAppServer.WebAPI.props",
+      "PackagePath": "build\\ChatAppServer.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ChatAppServer.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\ChatAppServer.WebAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ChatAppServer.WebAPI.props",
+      "PackagePath": "buildTransitive\\ChatAppServer.WebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
