@@ -2,22 +2,22 @@
     <div class="col"></div>
     <div class="col-9 mt-8">
         <div class="flex justify-content-end mb-4" >
-            <p-button label="Logout" severity="danger" />
+            <p-button label="Logout" severity="danger" (onClick)="logout()"/>
         </div>
         <div class="grid grid-nogutter">
             <div class="col-2">
-                <p-scrollPanel styleClass="bg-primary-reverse border-round-2xl"
-                    [style]="{ width: '100%', height: '75vh' }">
+                <p-scrollPanel styleClass="bg-primary-reverse border-round-2xl shadow-3"
+                    [style]="{ width: '100%', height: '80vh' }">
                     @for (user of users; track user) {
                     <div class="flex align-items-center justify-content-start pt-2">
                         <div class="flex align-items-center justify-content-start cursor-pointer pl-3 pr-3 pt-1 pb-1 hover:bg-white-alpha-10 transition-duration-100 border-round-xl"
-                           >
-                            <p-avatar image="" styleClass="mr-2"
+                            [ngClass]="selectedUserId == user.id ? 'active' : ''" (click)="changeUser(user)">
+                            <p-avatar image="https://localhost:7167/avatar/{{user.avatar}}" styleClass="mr-2"
                                 size="large" shape="circle" />
                             <div>
                                 <span class="font-bold">{{user.name}}</span><br>
                                 <small class="pt-1"><i class="pi pi-circle-fill pr-1" style="font-size: 0.6rem;"
-                                       ></i>
+                                        [ngClass]="user.status === 'online' ? 'online' : 'offline'"></i>
                                     {{user.status}}</small>
                             </div>
                         </div>
@@ -25,18 +25,18 @@
                     }
                 </p-scrollPanel>
             </div>
-            <div class="col bg-primary-reverse">
+            <div class="col bg-primary-reverse shadow-3 border-round-lg">
                 @if(selectedUserId){
-                <div class="bg-primary-reverse" id="header">
+                <div class="bg-primary-reverse border-bottom-2" id="header">
                     <div class="flex align-items-center justify-content-start pl-3">
                         <div class="flex align-items-center justify-content-center pl-3 pr-3 pt-1 pb-1 border-round-xl">
-                            <p-avatar image="" styleClass="mr-2"
+                            <p-avatar image="https://localhost:7167/avatar/{{selectedUser.avatar}}" styleClass="mr-2"
                                 size="xlarge" shape="circle" />
                             <div>
-                                <span class="font-bold text-xl"></span><br>
+                                <span class="font-bold text-xl">{{selectedUser.name}}</span><br>
                                 <small class="pt-1"><i class="pi pi-circle-fill pr-1" style="font-size: 0.6rem;"
-                                        ></i>
-                                    </small>
+                                        [ngClass]="selectedUser.status === 'online' ? 'online' : 'offline'"></i>
+                                    {{selectedUser.status}}</small>
                             </div>
                         </div>
                     </div>
@@ -44,107 +44,30 @@
                 <p-scrollPanel #scrollPanel [style]="{ width: '100%', height: '62vh' }" styleClass="bg-primary-reverse custombar2">
                     @for (chat of chats; track chat) {
                      @if (selectedUserId == chat.userId) {
-                         <div class="flex flex-wrap mt-3 transition-delay-300">
+                         <div class="flex flex-wrap mt-3 ml-3 transition-delay-300">
                              <div class="flex justify-content-center align-items-end">
-                                 <div class="bg-primary p-2 border-round-sm" style="max-width: 500px;">
+                                 <div #box [attr.id]="chat.id" class="bg-primary p-2 border-round-2xl" style="max-width: 500px;">
                                      {{chat.message}}
                                      <small class="flex justify-content-end">{{chat.date}}</small>
                                  </div>
                              </div>
                             </div>
                         }@else {
-                         <div class="flex flex-wrap justify-content-end mt-3 transition-delay-300">
-                             <div class="flex justify-content-center align-items-end">
-                                 <div class="bg-primary p-2 border-round-sm" style="max-width: 500px;">
+                         <div class="flex flex-wrap justify-content-end mt-3  mr-3 transition-delay-300">
+                             <div  class="flex justify-content-center align-items-end">
+                                 <div class="bg-primary p-2 border-round-2xl" style="max-width: 500px;">
                                      {{chat.message}}
                                      <small class="flex justify-content-end">{{chat.date}}</small>
+                                        <i *ngIf="chat.id == messageIdFromRes && isRead || chat.isMessageRead" class="pi pi-check flex justify-content-end" style="color: slateblue"></i>
                                  </div>
                              </div>
                             </div>
                         }
-                        
-                    }
-                 </p-scrollPanel>
-                 <p-inputGroup styleClass="flex justify-content-center mt-3">
-                     <button  type="button" pButton icon="pi pi-send" class="p-button-success"></button>
-                     <input type="text" pInputText class="w-9" placeholder="Message" />
-                 </p-inputGroup>
-                }
-            </div>
-        </div>
-    </div>
-    <div class="col"></div>
-</div>
-<div class="grid grid-nogutter">
-    <div class="col"></div>
-    <div class="col-9 mt-8">
-        <div class="flex justify-content-end mb-4" >
-            <p-button label="Logout" severity="danger" />
-        </div>
-        <div class="grid grid-nogutter">
-            <div class="col-2">
-                <p-scrollPanel styleClass="bg-primary-reverse border-round-2xl"
-                    [style]="{ width: '100%', height: '75vh' }">
-                    @for (user of users; track user) {
-                    <div class="flex align-items-center justify-content-start pt-2">
-                        <div class="flex align-items-center justify-content-start cursor-pointer pl-3 pr-3 pt-1 pb-1 hover:bg-white-alpha-10 transition-duration-100 border-round-xl"
-                           >
-                            <p-avatar image="" styleClass="mr-2"
-                                size="large" shape="circle" />
-                            <div>
-                                <span class="font-bold">{{user.name}}</span><br>
-                                <small class="pt-1"><i class="pi pi-circle-fill pr-1" style="font-size: 0.6rem;"
-                                       ></i>
-                                    {{user.status}}</small>
-                            </div>
-                        </div>
-                    </div>
                     }
                 </p-scrollPanel>
-            </div>
-            <div class="col bg-primary-reverse">
-                @if(selectedUserId){
-                <div class="bg-primary-reverse" id="header">
-                    <div class="flex align-items-center justify-content-start pl-3">
-                        <div class="flex align-items-center justify-content-center pl-3 pr-3 pt-1 pb-1 border-round-xl">
-                            <p-avatar image="" styleClass="mr-2"
-                                size="xlarge" shape="circle" />
-                            <div>
-                                <span class="font-bold text-xl"></span><br>
-                                <small class="pt-1"><i class="pi pi-circle-fill pr-1" style="font-size: 0.6rem;"
-                                        ></i>
-                                    </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p-scrollPanel #scrollPanel [style]="{ width: '100%', height: '62vh' }" styleClass="bg-primary-reverse custombar2">
-                    @for (chat of chats; track chat) {
-                     @if (selectedUserId == chat.userId) {
-                         <div class="flex flex-wrap mt-3 transition-delay-300">
-                             <div class="flex justify-content-center align-items-end">
-                                 <div class="bg-primary p-2 border-round-sm" style="max-width: 500px;">
-                                     {{chat.message}}
-                                     <small class="flex justify-content-end">{{chat.date}}</small>
-                                 </div>
-                             </div>
-                            </div>
-                        }@else {
-                         <div class="flex flex-wrap justify-content-end mt-3 transition-delay-300">
-                             <div class="flex justify-content-center align-items-end">
-                                 <div class="bg-primary p-2 border-round-sm" style="max-width: 500px;">
-                                     {{chat.message}}
-                                     <small class="flex justify-content-end">{{chat.date}}</small>
-                                 </div>
-                             </div>
-                            </div>
-                        }
-                        
-                    }
-                 </p-scrollPanel>
                  <p-inputGroup styleClass="flex justify-content-center mt-3">
-                     <button  type="button" pButton icon="pi pi-send" class="p-button-success"></button>
-                     <input type="text" pInputText class="w-9" placeholder="Message" />
+                     <button (click)="sendMessage()"  type="button" pButton icon="pi pi-send" class="p-button-success"></button>
+                     <input type="text" pInputText class="w-9" placeholder="Message" [(ngModel)]="message"/>
                  </p-inputGroup>
                 }
             </div>
@@ -152,8 +75,3 @@
     </div>
     <div class="col"></div>
 </div>
-<div class="container">
-    <div class="spacer">xxxxx</div>
-    <div #box class="box">Show box</div>
-    <div *ngIf="isVisible">xsadasdasd</div>
-  </div>
